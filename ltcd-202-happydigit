@@ -1,0 +1,49 @@
+class Solution {
+
+public:
+
+int happy(int n){
+
+   int tmp=0,k=0;
+
+    while(n>0)
+
+    {
+
+    k=n%10;
+
+    tmp = tmp+(k*k);
+
+    n=n/10;
+
+    }
+
+    return tmp;
+
+}
+
+   bool isHappy(int n)
+
+{
+
+//怎么这么恶心人，4竟然绕回来，真是绝了
+
+while(n>4)
+
+{
+
+    n=happy(n);
+
+}
+
+if(n==1)
+
+return true;
+
+else
+
+return false;
+
+}
+
+};
